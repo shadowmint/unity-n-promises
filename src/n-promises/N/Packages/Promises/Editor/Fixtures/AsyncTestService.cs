@@ -9,7 +9,7 @@ namespace N.Packages.Promises.Editor.Fixtures
 
     public Promise<int> ResolveValue()
     {
-      return new Promise<int>(Resolve()).ResolveWhenDone();
+      return new Promise<int>(Resolve()).Dispatch();
     }
 
     private async Task<int> Resolve()

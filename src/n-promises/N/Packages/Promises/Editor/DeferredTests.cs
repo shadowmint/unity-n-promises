@@ -10,7 +10,7 @@ namespace N.Packages.Promises.Editor
   public class DeferredTests : TestCase
   {
     [Test]
-    public void TestResolveWhenDone()
+    public void TestDispatch()
     {
       var service = new AsyncTestService();
       var deferred = service.ResolveValue();

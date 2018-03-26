@@ -13,7 +13,7 @@ namespace Assets.Demo
       if (StartSpin)
       {
         StartSpin = false;
-        AsyncWorker.Run(SpinCube).Then(() => { Debug.Log("Spin finished!!"); }, Debug.LogException).ResolveWhenDone();
+        AsyncWorker.Run(SpinCube).Then(() => { Debug.Log("Spin finished!!"); }, Debug.LogException).Dispatch();
       }
     }
 
