@@ -4,6 +4,7 @@ using N.Package.Test;
 using N.Packages.Promises.Editor.Fixtures;
 using N.Packages.Promises.Infrastructure;
 using NUnit.Framework;
+using UnityEngine;
 
 namespace N.Packages.Promises.Editor
 {
@@ -27,6 +28,35 @@ namespace N.Packages.Promises.Editor
 
       PromiseWorker.Get().Update();
       Assert(result == 200);
+    }
+
+    [Test]
+    public void TestDispatchUntypedTask()
+    {
+      var service = new AsyncTestService();
+      var deferred = service.UnTypedTaskResult();
+
+      var result = 0;
+      deferred.Promise().Then((value) =>
+        {
+          Assert(value);
+          result = 1;
+        }, (err) =>
+        {
+          Debug.LogError(err);
+          Unreachable();
+        })
+        .Dispatch();
+      Assert(result == 0);
+
+      service.ForValueOne.Resolve(100);
+      Assert(result == 0);
+
+      service.ForValueTwo.Resolve(100);
+      Assert(result == 0);
+
+      PromiseWorker.Get().Update();
+      Assert(result == 1);
     }
 
     [Test]

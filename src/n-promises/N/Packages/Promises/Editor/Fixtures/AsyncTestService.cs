@@ -30,5 +30,10 @@ namespace N.Packages.Promises.Editor.Fixtures
       var value = await ForValueTwo.Task;
       return value;
     }
+
+    public async Task UnTypedTaskResult()
+    {
+      await Resolve();
+    }
   }
 }

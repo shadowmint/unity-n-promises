@@ -1,6 +1,6 @@
 namespace N.Packages.Promises.Infrastructure
 {
-  internal enum PromiseState
+  public enum PromiseState
   {
     Pending,
     Resolved,
