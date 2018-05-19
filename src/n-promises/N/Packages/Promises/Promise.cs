@@ -40,7 +40,7 @@ namespace N.Packages.Promises
 
       if (_task.IsFaulted)
       {
-        Failed();
+        Failed(_task.Exception);
         return true;
       }
 
@@ -59,7 +59,7 @@ namespace N.Packages.Promises
       base.Success();
     }
 
-    protected override void Failed(Exception exception = null)
+    protected override void Failed(Exception exception)
     {
       _deferred.SetException(exception);
       base.Failed(exception);
