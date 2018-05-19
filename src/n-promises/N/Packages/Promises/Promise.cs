@@ -160,16 +160,14 @@ namespace N.Packages.Promises
       {
         action?.Invoke(value);
       }
-#if !UNITY_EDITOR
       catch (Exception error)
       {
-        Debug.LogException(error);
+        // Pass tests, but still log in play mode in the editor.
+        var runningTests = Application.isEditor && !Application.isPlaying;
+        if (!runningTests) {
+          Debug.LogException(error);
+        }
       }
-#else
-      catch (Exception)
-      {
-      }
-#endif
     }
 
     private void Clear()
