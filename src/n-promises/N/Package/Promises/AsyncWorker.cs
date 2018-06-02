@@ -3,7 +3,7 @@ using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace N.Packages.Promises
+namespace N.Package.Promises
 {
   public class AsyncWorker : MonoBehaviour
   {

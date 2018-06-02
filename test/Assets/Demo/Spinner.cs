@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using N.Packages.Promises;
+using N.Package.Promises;
 using UnityEngine;
 
 namespace Assets.Demo
@@ -21,7 +21,7 @@ namespace Assets.Demo
     {
       for (var i = 0; i < 100; i++)
       {
-        Debug.Log($"{i}");      
+        Debug.Log($"{i}");
         transform.rotation *= Quaternion.AngleAxis(5, Vector3.up);
         yield return new WaitForSeconds(0.1f);
       }

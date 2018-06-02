@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using N.Packages.Promises.Errors;
-using N.Packages.Promises.Infrastructure;
+using N.Package.Promises.Errors;
+using N.Package.Promises.Infrastructure;
 using UnityEngine;
 
-namespace N.Packages.Promises
+namespace N.Package.Promises
 {
   public class Promise : Promise<bool>
   {

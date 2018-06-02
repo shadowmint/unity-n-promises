@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using N.Package.Test.Runtime;
 using UnityEngine;
 
-namespace N.Packages.Promises.Tests
+namespace N.Package.Promises.Tests
 {
   public class AsyncTests : RuntimeTest
   {

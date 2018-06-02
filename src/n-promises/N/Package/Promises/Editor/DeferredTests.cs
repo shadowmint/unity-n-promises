@@ -2,8 +2,9 @@
 using System;
 using N.Package.Test;
 using N.Packages.Promises.Editor.Fixtures;
-using N.Packages.Promises.Infrastructure;
 using NUnit.Framework;
+using N.Package.Promises;
+using N.Package.Promises.Infrastructure;
 using UnityEngine;
 
 namespace N.Packages.Promises.Editor

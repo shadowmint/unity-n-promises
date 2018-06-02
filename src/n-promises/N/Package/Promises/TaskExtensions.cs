@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace N.Packages.Promises
+namespace N.Package.Promises
 {
   public static class TaskExtensions
   {

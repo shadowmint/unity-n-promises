@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace N.Packages.Promises.Infrastructure
+namespace N.Package.Promises.Infrastructure
 {
   public class PromiseWorker : MonoBehaviour
   {

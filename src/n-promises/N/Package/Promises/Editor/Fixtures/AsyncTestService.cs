@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using N.Package.Promises;
 
 namespace N.Packages.Promises.Editor.Fixtures
 {

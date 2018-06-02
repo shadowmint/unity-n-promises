@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace N.Packages.Promises.Errors
+namespace N.Package.Promises.Errors
 {
   public class TaskCancelledException : Exception
   {

@@ -3,6 +3,7 @@ using System;
 using N.Package.Test;
 using N.Packages.Promises.Editor.Fixtures;
 using NUnit.Framework;
+using N.Package.Promises;
 
 namespace N.Packages.Promises.Editor
 {

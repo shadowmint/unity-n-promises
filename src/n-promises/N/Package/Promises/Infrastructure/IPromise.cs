@@ -1,4 +1,4 @@
-namespace N.Packages.Promises.Infrastructure
+namespace N.Package.Promises.Infrastructure
 {
   public interface IPromise
   {
