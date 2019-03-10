@@ -16,10 +16,20 @@ namespace N.Package.Promises
 
     private Deferred Deferred { get; set; }
 
-    public static Promise Run(Func<IEnumerator> task, string name = "AsyncWorker")
+    public static Promise Run(Func<IEnumerator> task, string name = "AsyncWorker", bool dontDestroyOnLoad = true, bool hideInHierarchy = true)
     {
       var container = new GameObject();
       container.transform.name = name;
+
+      if (dontDestroyOnLoad)
+      {
+        DontDestroyOnLoad(container);
+      }
+
+      if (hideInHierarchy)
+      {
+        container.hideFlags = HideFlags.HideInHierarchy;
+      }
 
       var worker = container.AddComponent<AsyncWorker>();
       worker.Task = task;
@@ -27,11 +37,21 @@ namespace N.Package.Promises
       return new Promise(worker.Deferred.Task);
     }
 
-    public static Task RunAsync(Func<IEnumerator> task, string name = "AsyncWorker")
+    public static Task RunAsync(Func<IEnumerator> task, string name = "AsyncWorker", bool dontDestroyOnLoad = true, bool hideInHierarchy = true)
     {
       var container = new GameObject();
       container.transform.name = name;
 
+      if (dontDestroyOnLoad)
+      {
+        DontDestroyOnLoad(container);
+      }
+
+      if (hideInHierarchy)
+      {
+        container.hideFlags = HideFlags.HideInHierarchy;
+      }
+      
       var worker = container.AddComponent<AsyncWorker>();
       worker.Task = task;
       worker.Deferred = new Deferred();
