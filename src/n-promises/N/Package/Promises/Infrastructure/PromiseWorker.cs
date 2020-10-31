@@ -34,7 +34,7 @@ namespace N.Package.Promises.Infrastructure
       _promises.Enqueue(promise);
     }
 
-    public void Update()
+    public void LateUpdate()
     {
       var count = _promises.Count;
       for (var i = 0; i < count; i++)

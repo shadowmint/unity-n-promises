@@ -64,6 +64,29 @@ namespace N.Package.Promises
       _deferred.SetException(exception);
       base.Failed(exception);
     }
+
+    /// <summary>
+    /// Run an async action and automatically dispatch it.
+    /// Use it like this:
+    ///
+    ///   Promise.Run(async () => {
+    ///     try {
+    ///       await whatever()
+    ///     }
+    ///     catch(Exception err) {
+    ///       ...
+    ///     }
+    ///   });
+    ///
+    /// This allows a more ergonomic code path than:
+    ///
+    ///   whatever().Promise().Then(() => { ... }, (err) => { .. });
+    ///  
+    /// </summary>
+    public static void Run(Func<Task> action)
+    {
+       action().Dispatch();
+    }
   }
 
   public class Promise<TResult> : IPromise
